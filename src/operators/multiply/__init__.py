@@ -1,0 +1,1 @@
+"""Multiplication operator worker module."""

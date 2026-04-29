@@ -1,0 +1,1 @@
+temporal-worker-sdk==1.1.3

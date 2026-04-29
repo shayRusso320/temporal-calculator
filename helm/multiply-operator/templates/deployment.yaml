@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculator-multiply
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: calculator
+    component: operator
+    operator: multiply
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: calculator
+      component: operator
+      operator: multiply
+  template:
+    metadata:
+      labels:
+        app: calculator
+        component: operator
+        operator: multiply
+    spec:
+      containers:
+      - name: multiply-operator
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: TEMPORAL_HOST
+          value: {{ .Values.temporal.host }}
+        - name: TEMPORAL_PORT
+          value: {{ .Values.temporal.port | quote }}
+        - name: TEMPORAL_NAMESPACE
+          value: {{ .Values.temporal.namespace }}
+        - name: WORKER_TASK_QUEUE
+          value: {{ .Values.taskQueue }}
+        resources:
+          {{- toYaml .Values.resources | nindent 10 }}

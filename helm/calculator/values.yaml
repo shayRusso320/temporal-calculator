@@ -1,0 +1,29 @@
+namespace: calculator
+
+# Global Temporal settings
+temporal:
+  host: temporal
+  port: 7233
+  namespace: default
+
+# Enable/disable individual components
+components:
+  add: true
+  subtract: true
+  multiply: true
+  divide: true
+  power: true
+  workflow: true
+
+# Global image settings
+image:
+  pullPolicy: IfNotPresent
+
+# Global resource settings
+resources:
+  limits:
+    cpu: 500m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: distributed-calculator
+description: A distributed calculator using Temporal workflows - parent chart
+type: application
+version: 1.0.0
+appVersion: "1.0"

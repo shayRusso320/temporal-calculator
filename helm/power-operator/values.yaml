@@ -1,0 +1,23 @@
+namespace: calculator
+
+image:
+  repository: calculator-power
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+temporal:
+  host: temporal
+  port: 7233
+  namespace: default
+
+taskQueue: queue-pow
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi

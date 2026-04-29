@@ -1,0 +1,25 @@
+dependencies:
+  - name: add-operator
+    version: "1.0.0"
+    repository: "file://../add-operator"
+    condition: components.add
+  - name: subtract-operator
+    version: "1.0.0"
+    repository: "file://../subtract-operator"
+    condition: components.subtract
+  - name: multiply-operator
+    version: "1.0.0"
+    repository: "file://../multiply-operator"
+    condition: components.multiply
+  - name: divide-operator
+    version: "1.0.0"
+    repository: "file://../divide-operator"
+    condition: components.divide
+  - name: power-operator
+    version: "1.0.0"
+    repository: "file://../power-operator"
+    condition: components.power
+  - name: workflow
+    version: "1.0.0"
+    repository: "file://../workflow"
+    condition: components.workflow

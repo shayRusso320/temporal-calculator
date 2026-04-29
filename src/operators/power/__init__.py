@@ -1,0 +1,1 @@
+"""Power operator worker module."""
