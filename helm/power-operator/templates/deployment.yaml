@@ -25,13 +25,10 @@ spec:
       - name: power-operator
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        envFrom:
+        - configMapRef:
+            name: calculator-config
         env:
-        - name: TEMPORAL_HOST
-          value: {{ .Values.temporal.host }}
-        - name: TEMPORAL_PORT
-          value: {{ .Values.temporal.port | quote }}
-        - name: TEMPORAL_NAMESPACE
-          value: {{ .Values.temporal.namespace }}
         - name: WORKER_TASK_QUEUE
           value: {{ .Values.taskQueue }}
         resources:

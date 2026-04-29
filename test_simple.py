@@ -43,7 +43,7 @@ async def main() -> None:
     """Connect to Temporal and submit test expressions."""
     try:
         # Connect to Temporal server
-        client = await Client.connect("localhost:7233")
+        client = await Client.connect("localhost:7233", namespace="calc")
         logger.info("Connected to Temporal server")
 
         # Test expressions
@@ -77,7 +77,7 @@ async def main() -> None:
         logger.info(f"Results: {passed} passed, {failed} failed")
         logger.info(f"{'='*50}")
 
-        await client.close()
+        # Note: Client doesn't need explicit close in newer versions
 
     except Exception as e:
         logger.error(f"Failed to connect to Temporal: {str(e)}")

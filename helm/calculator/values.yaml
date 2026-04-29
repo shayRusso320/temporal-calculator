@@ -2,9 +2,9 @@ namespace: calculator
 
 # Global Temporal settings
 temporal:
-  host: temporal
+  host: temporal-frontend.temporal.svc.cluster.local
   port: 7233
-  namespace: default
+  namespace: calc
 
 # Enable/disable individual components
 components:

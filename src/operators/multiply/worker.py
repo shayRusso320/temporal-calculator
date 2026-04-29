@@ -3,6 +3,7 @@
 import asyncio
 import logging
 
+from temporalio import activity
 from temporal_worker_sdk import TemporalSDK
 
 logging.basicConfig(
@@ -11,14 +12,15 @@ logging.basicConfig(
 )
 
 
-def multiply(a: float, b: float) -> float:
+@activity.defn
+async def multiply(a: float, b: float) -> float:
     """Multiply two numbers."""
     return a * b
 
 
 async def main():
     sdk = TemporalSDK()
-    sdk.register_activities(add)
+    sdk.register_activities(multiply)
     await sdk.start()
 
 

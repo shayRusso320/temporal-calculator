@@ -22,14 +22,11 @@ spec:
       - name: workflow
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        envFrom:
+        - configMapRef:
+            name: calculator-config
         env:
-        - name: TEMPORAL_HOST
-          value: {{ .Values.temporal.host }}
-        - name: TEMPORAL_PORT
-          value: {{ .Values.temporal.port | quote }}
-        - name: TEMPORAL_NAMESPACE
-          value: {{ .Values.temporal.namespace }}
-        - name: TASK_QUEUE
+        - name: WORKER_TASK_QUEUE
           value: {{ .Values.taskQueue }}
         resources:
           {{- toYaml .Values.resources | nindent 10 }}

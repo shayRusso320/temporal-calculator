@@ -1,1 +1,2 @@
-temporal-worker-sdk==1.1.3
+temporal-worker-sdk==1.1.4
+temporalio>=1.0.0

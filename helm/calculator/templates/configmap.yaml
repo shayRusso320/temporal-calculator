@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: calculator-config
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: calculator
+data:
+  TEMPORAL_HOST: "temporal-frontend.temporal.svc.cluster.local"
+  TEMPORAL_PORT: "{{ .Values.temporal.port }}"
+  TEMPORAL_NAMESPACE: "calc"

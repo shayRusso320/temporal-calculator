@@ -3,6 +3,7 @@
 import asyncio
 import logging
 
+from temporalio import activity
 from temporal_worker_sdk import TemporalSDK
 
 logging.basicConfig(
@@ -11,7 +12,8 @@ logging.basicConfig(
 )
 
 
-def subtract(a: float, b: float) -> float:
+@activity.defn
+async def subtract(a: float, b: float) -> float:
     """Subtract two numbers."""
     return a - b
 

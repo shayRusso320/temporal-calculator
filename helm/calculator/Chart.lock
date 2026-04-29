@@ -1,0 +1,21 @@
+dependencies:
+- name: add-operator
+  repository: file://../add-operator
+  version: 1.0.0
+- name: subtract-operator
+  repository: file://../subtract-operator
+  version: 1.0.0
+- name: multiply-operator
+  repository: file://../multiply-operator
+  version: 1.0.0
+- name: divide-operator
+  repository: file://../divide-operator
+  version: 1.0.0
+- name: power-operator
+  repository: file://../power-operator
+  version: 1.0.0
+- name: workflow
+  repository: file://../workflow
+  version: 1.0.0
+digest: sha256:b6a5bda01d8878ee572543bc11858be8e9a4286305fff3c013733382505eaad3
+generated: "2026-04-29T16:20:40.2745+03:00"

@@ -3,6 +3,7 @@
 import asyncio
 import logging
 
+from temporalio import activity
 from temporal_worker_sdk import TemporalSDK
 
 logging.basicConfig(
@@ -16,7 +17,8 @@ class DivisionByZeroError(Exception):
     pass
 
 
-def divide(a: float, b: float) -> float:
+@activity.defn
+async def divide(a: float, b: float) -> float:
     """Divide two numbers."""
     if b == 0:
         raise DivisionByZeroError("Cannot divide by zero")

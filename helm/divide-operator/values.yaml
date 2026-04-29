@@ -1,16 +1,16 @@
 namespace: calculator
 
 image:
-  repository: calculator-divide
-  tag: latest
-  pullPolicy: IfNotPresent
+  repository: shayr30/calculator-divide
+  tag: v4
+  pullPolicy: Always
 
 replicaCount: 1
 
 temporal:
-  host: temporal
+  host: temporal-frontend.temporal.svc.cluster.local
   port: 7233
-  namespace: default
+  namespace: temporal
 
 taskQueue: queue-div
 
